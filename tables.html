@@ -26,5 +26,28 @@
                 </div>
     </div>
     
+    <script type="text/javascript">
+        $("#submitbutton").on("click", function() {
+          var searchedCharacter = $("#character-search").val().trim();
+    
+          // Using a RegEx Pattern to remove spaces from searchedCharacter
+          // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+          savedReservation = savedReservation.replace(/\s+/g, "");
+    
+          $.get("/api/reservation" + savedReservation, function(data) {
+            console.log(data);
+            if (data) {
+              $("#name").show();
+              $("#number").text(data.name);
+              $("#email").text(data.role);
+              $("#id").text(data.age);
+            }
+            else {
+              $("#name").text("Sorry we're full, but you've been put on the waitlist");
+            }
+          });
+        });
+        </script>
+
 </body>
 </html>

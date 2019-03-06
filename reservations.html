@@ -46,11 +46,35 @@
                                   <div class="form-check">
                                   </div>
                                 </div>
-                                <div class="row" id="submitButton"><button type="submit" class="btn btn-primary">Reserve Your Table!</button></div>
+                                <div class="row" id="reservationButton"><button type="submit" class="btn btn-primary">Reserve Your Table!</button></div>
                                 
                               </form>
                               <div class="col-md-12"> <a href="/api/tables">API Table Link</a> | <a href="api/waitlist">API Reservation Link</a> </div>
                         
             </div>
+            <script>
+                $("#reservationButton").on("click", function(event){
+                    event.preventDefault();
+
+                    var reservation = {
+                      inputName: $("#inputName").val().trim(),
+                      Number: $("#Number").val().trim(),
+                      inputEmail: $("#inputEmail").val().trim(),
+                      inputID: $("#inputID").val().trim()
+                    };
+
+                    $.post("/api/reservation", reservation)
+                      .then(function(data) {
+                        console.log(data);
+                        if (data.reservation) {
+                          alert("You made a reservation")
+                        }
+                        else {alert("You're on the waitlist")}
+                      })
+                  
+                })
+            
+            
+            </script>
 </body>
 </html>

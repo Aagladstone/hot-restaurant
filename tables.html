@@ -37,10 +37,10 @@
           $.get("/api/reservation" + savedReservation, function(data) {
             console.log(data);
             if (data) {
-              $("#name").show();
-              $("#number").text(data.name);
-              $("#email").text(data.role);
-              $("#id").text(data.age);
+              $("#name").show(data.name);
+              $("#number").text(data.number);
+              $("#email").text(data.email);
+              $("#id").text(data.id);
             }
             else {
               $("#name").text("Sorry we're full, but you've been put on the waitlist");

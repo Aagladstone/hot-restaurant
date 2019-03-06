@@ -23,30 +23,30 @@
                     
                         <form>
                                 <h3>Table Reservation</h3>
-                                <div class="form-row">
-                                  <div class="form-group col-md-12">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                <div class="form-group col-md-12">
+                                  <div class="form-group">
+                                  <label for="inputName" id="number">Name</label>
+                                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                </div>
+                                <div class="form-group col-md-12">
+                                  <label for="Number" id="number">Phone Number</label>
+                                  <input type="text" class="form-control" id="Number" placeholder="Number">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail" id="email">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <label for="inputAddress">Address</label>
-                                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress2">Address 2</label>
-                                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                </div>
                                 <div class="form-row">
                                   <div class="form-group col-md-12">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
+                                    <label for="inputID" id="id">Unique ID</label>
+                                    <input type="text" class="form-control" id="inputID">
                                   </div>
                                 <div class="form-group">
                                   <div class="form-check">
                                   </div>
                                 </div>
-                                <div class="row"><button type="submit" class="btn btn-primary">Reserve Your Table!</button></div>
+                                <div class="row" id="submitButton"><button type="submit" class="btn btn-primary">Reserve Your Table!</button></div>
                                 
                               </form>
                               <div class="col-md-12"> <a href="/api/tables">API Table Link</a> | <a href="api/waitlist">API Reservation Link</a> </div>
